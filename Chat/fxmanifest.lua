@@ -4,8 +4,17 @@ description 'chat esx'
 
 ui_page 'html/index.html'
 
-client_script 'cl_chat.lua'
-server_script 'sv_chat.lua'
+client_scripts {
+    'cl_chat.lua',
+    'client/cl_chat.lua'
+}
+
+server_scripts {
+    'sv_chat.lua',
+    'server/sv_chat.lua',
+    'server/commands.lua',
+    'server/main.lua'
+}
 
 files {
     'html/index.html',
@@ -27,7 +36,5 @@ files {
     'html/vendor/fonts/LatoBold2.woff2',
   }
 
-fx_version 'adamant'
-games { 'rdr3', 'gta5' }
-rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
-
+fx_version 'cerulean'
+games { 'gta5' }
