@@ -64,11 +64,12 @@ window.APP = {
       this.oldMessages = [];
       this.oldMessagesIndex = -1;
     },
-    ON_SUGGESTION_ADD({ suggestion }) {
-      if (!suggestion.params) {
-        suggestion.params = []; //TODO Move somewhere else
-      }
-      this.suggestions.push(suggestion);
+ON_SUGGESTION_ADD({ suggestion }) {
+  if (!Array.isArray(suggestion.params)) {
+    suggestion.params = [];
+  }
+  this.suggestions.push(suggestion);
+}
     },
     ON_SUGGESTION_REMOVE({ name }) {
       this.suggestions = this.suggestions.filter((sug) => sug.name !== name)
